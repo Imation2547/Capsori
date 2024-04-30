@@ -1,0 +1,534 @@
+--[=[
+ d888b  db    db d888888b      .d888b.      db      db    db  .d8b.  
+88' Y8b 88    88   `88'        VP  `8D      88      88    88 d8' `8b 
+88      88    88    88            odD'      88      88    88 88ooo88 
+88  ooo 88    88    88          .88'        88      88    88 88~~~88 
+88. ~8~ 88b  d88   .88.        j88.         88booo. 88b  d88 88   88 
+ Y888P  ~Y8888P' Y888888P      888888D      Y88888P ~Y8888P' YP   YP  CONVERTER
+]=]
+
+-- Instances: 26 | Scripts: 8 | Modules: 0
+local G2L = {};
+
+-- StarterGui.CapsoriPC
+G2L["1"] = Instance.new("ScreenGui", game:GetService("Players").LocalPlayer:WaitForChild("PlayerGui"));
+G2L["1"]["Name"] = [[CapsoriPC]];
+G2L["1"]["ZIndexBehavior"] = Enum.ZIndexBehavior.Sibling;
+G2L["1"]["ResetOnSpawn"] = false;
+
+-- StarterGui.CapsoriPC.Main
+G2L["2"] = Instance.new("Frame", G2L["1"]);
+G2L["2"]["BorderSizePixel"] = 2;
+G2L["2"]["BackgroundColor3"] = Color3.fromRGB(26, 26, 26);
+G2L["2"]["Size"] = UDim2.new(0.6238651275634766, 0, 0.6497975587844849, 0);
+G2L["2"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["2"]["Position"] = UDim2.new(0.1880674511194229, 0, 0.17408907413482666, 0);
+G2L["2"]["Visible"] = false;
+G2L["2"]["Name"] = [[Main]];
+
+-- StarterGui.CapsoriPC.Main.Title
+G2L["3"] = Instance.new("TextLabel", G2L["2"]);
+G2L["3"]["BorderSizePixel"] = 0;
+G2L["3"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["3"]["FontFace"] = Font.new([[rbxassetid://12187372382]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["3"]["TextSize"] = 50;
+G2L["3"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["3"]["Size"] = UDim2.new(0.32016631960868835, 0, 0.15576323866844177, 0);
+G2L["3"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["3"]["Text"] = [[Capsori]];
+G2L["3"]["Name"] = [[Title]];
+G2L["3"]["BackgroundTransparency"] = 1;
+
+-- StarterGui.CapsoriPC.Main.FPS
+G2L["4"] = Instance.new("TextLabel", G2L["2"]);
+G2L["4"]["BorderSizePixel"] = 0;
+G2L["4"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["4"]["FontFace"] = Font.new([[rbxasset://fonts/families/GothamSSm.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["4"]["TextSize"] = 25;
+G2L["4"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["4"]["Size"] = UDim2.new(0.2299107164144516, 0, 0.09528856724500656, 0);
+G2L["4"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["4"]["Text"] = [[FPS: nil]];
+G2L["4"]["Name"] = [[FPS]];
+G2L["4"]["BackgroundTransparency"] = 1;
+G2L["4"]["Position"] = UDim2.new(0.3193078339099884, 0, 0.029322020709514618, 0);
+
+-- StarterGui.CapsoriPC.Main.FPS.FPSFunction
+G2L["5"] = Instance.new("LocalScript", G2L["4"]);
+G2L["5"]["Name"] = [[FPSFunction]];
+
+-- StarterGui.CapsoriPC.Main.Close
+G2L["6"] = Instance.new("TextButton", G2L["2"]);
+G2L["6"]["TextWrapped"] = true;
+G2L["6"]["BorderSizePixel"] = 0;
+G2L["6"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["6"]["TextSize"] = 40;
+G2L["6"]["FontFace"] = Font.new([[rbxasset://fonts/families/FredokaOne.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["6"]["TextColor3"] = Color3.fromRGB(255, 0, 0);
+G2L["6"]["Size"] = UDim2.new(0.11434511095285416, 0, 0.15576323866844177, 0);
+G2L["6"]["Name"] = [[Close]];
+G2L["6"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["6"]["Text"] = [[x]];
+G2L["6"]["Position"] = UDim2.new(0.885654866695404, 0, 0, 0);
+G2L["6"]["BackgroundTransparency"] = 1;
+
+-- StarterGui.CapsoriPC.Main.Close.LocalScript
+G2L["7"] = Instance.new("LocalScript", G2L["6"]);
+
+
+-- StarterGui.CapsoriPC.Main.ScriptBox
+G2L["8"] = Instance.new("TextBox", G2L["2"]);
+G2L["8"]["CursorPosition"] = -1;
+G2L["8"]["BorderSizePixel"] = 2;
+G2L["8"]["TextSize"] = 15;
+G2L["8"]["TextXAlignment"] = Enum.TextXAlignment.Left;
+G2L["8"]["TextWrapped"] = true;
+G2L["8"]["TextYAlignment"] = Enum.TextYAlignment.Top;
+G2L["8"]["BackgroundColor3"] = Color3.fromRGB(16, 16, 16);
+G2L["8"]["TextColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["8"]["FontFace"] = Font.new([[rbxasset://fonts/families/Inconsolata.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["8"]["PlaceholderText"] = [[--- Insert your script here]];
+G2L["8"]["Size"] = UDim2.new(0.9313929080963135, 0, 0.6386292576789856, 0);
+G2L["8"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["8"]["Text"] = [[]];
+G2L["8"]["Position"] = UDim2.new(0.03534303605556488, 0, 0.17445482313632965, 0);
+G2L["8"]["Name"] = [[ScriptBox]];
+
+-- StarterGui.CapsoriPC.Main.ScriptBox.Comments_
+G2L["9"] = Instance.new("TextLabel", G2L["8"]);
+G2L["9"]["TextWrapped"] = true;
+G2L["9"]["ZIndex"] = 5;
+G2L["9"]["TextYAlignment"] = Enum.TextYAlignment.Top;
+G2L["9"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["9"]["TextXAlignment"] = Enum.TextXAlignment.Left;
+G2L["9"]["FontFace"] = Font.new([[rbxasset://fonts/families/Inconsolata.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["9"]["TextTransparency"] = 1;
+G2L["9"]["TextSize"] = 14;
+G2L["9"]["TextColor3"] = Color3.fromRGB(87, 87, 87);
+G2L["9"]["Size"] = UDim2.new(1, 0, 1, 0);
+G2L["9"]["ClipsDescendants"] = true;
+G2L["9"]["Text"] = [[]];
+G2L["9"]["Name"] = [[Comments_]];
+G2L["9"]["BackgroundTransparency"] = 1;
+
+-- StarterGui.CapsoriPC.Main.ScriptBox.Globals_
+G2L["a"] = Instance.new("TextLabel", G2L["8"]);
+G2L["a"]["TextWrapped"] = true;
+G2L["a"]["ZIndex"] = 5;
+G2L["a"]["TextYAlignment"] = Enum.TextYAlignment.Top;
+G2L["a"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["a"]["TextXAlignment"] = Enum.TextXAlignment.Left;
+G2L["a"]["FontFace"] = Font.new([[rbxasset://fonts/families/Inconsolata.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["a"]["TextSize"] = 14;
+G2L["a"]["TextColor3"] = Color3.fromRGB(133, 215, 248);
+G2L["a"]["Size"] = UDim2.new(1, 0, 1, 0);
+G2L["a"]["ClipsDescendants"] = true;
+G2L["a"]["Text"] = [[]];
+G2L["a"]["Name"] = [[Globals_]];
+G2L["a"]["BackgroundTransparency"] = 1;
+
+-- StarterGui.CapsoriPC.Main.ScriptBox.Keywords_
+G2L["b"] = Instance.new("TextLabel", G2L["8"]);
+G2L["b"]["TextWrapped"] = true;
+G2L["b"]["ZIndex"] = 5;
+G2L["b"]["TextYAlignment"] = Enum.TextYAlignment.Top;
+G2L["b"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["b"]["TextXAlignment"] = Enum.TextXAlignment.Left;
+G2L["b"]["FontFace"] = Font.new([[rbxasset://fonts/families/Inconsolata.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["b"]["TextSize"] = 14;
+G2L["b"]["TextColor3"] = Color3.fromRGB(249, 110, 125);
+G2L["b"]["Size"] = UDim2.new(1, 0, 1, 0);
+G2L["b"]["ClipsDescendants"] = true;
+G2L["b"]["Text"] = [[           ]];
+G2L["b"]["Name"] = [[Keywords_]];
+G2L["b"]["BackgroundTransparency"] = 1;
+
+-- StarterGui.CapsoriPC.Main.ScriptBox.Numbers_
+G2L["c"] = Instance.new("TextLabel", G2L["8"]);
+G2L["c"]["TextWrapped"] = true;
+G2L["c"]["ZIndex"] = 5;
+G2L["c"]["TextYAlignment"] = Enum.TextYAlignment.Top;
+G2L["c"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["c"]["TextXAlignment"] = Enum.TextXAlignment.Left;
+G2L["c"]["FontFace"] = Font.new([[rbxasset://fonts/families/Inconsolata.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["c"]["TextSize"] = 14;
+G2L["c"]["TextColor3"] = Color3.fromRGB(255, 199, 0);
+G2L["c"]["Size"] = UDim2.new(0.9999998807907104, 0, 1, 0);
+G2L["c"]["ClipsDescendants"] = true;
+G2L["c"]["Text"] = [[           ]];
+G2L["c"]["Name"] = [[Numbers_]];
+G2L["c"]["BackgroundTransparency"] = 1;
+G2L["c"]["Position"] = UDim2.new(5.372812950099615e-08, 0, 0, 0);
+
+-- StarterGui.CapsoriPC.Main.ScriptBox.RemoteHighlight_
+G2L["d"] = Instance.new("TextLabel", G2L["8"]);
+G2L["d"]["TextWrapped"] = true;
+G2L["d"]["ZIndex"] = 5;
+G2L["d"]["TextYAlignment"] = Enum.TextYAlignment.Top;
+G2L["d"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["d"]["TextXAlignment"] = Enum.TextXAlignment.Left;
+G2L["d"]["FontFace"] = Font.new([[rbxasset://fonts/families/Inconsolata.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["d"]["TextSize"] = 14;
+G2L["d"]["TextColor3"] = Color3.fromRGB(12, 255, 204);
+G2L["d"]["Size"] = UDim2.new(0.9999998807907104, 0, 1, 0);
+G2L["d"]["ClipsDescendants"] = true;
+G2L["d"]["Text"] = [[           ]];
+G2L["d"]["Name"] = [[RemoteHighlight_]];
+G2L["d"]["BackgroundTransparency"] = 1;
+G2L["d"]["Position"] = UDim2.new(5.372812950099615e-08, 0, 0, 0);
+
+-- StarterGui.CapsoriPC.Main.ScriptBox.Strings_
+G2L["e"] = Instance.new("TextLabel", G2L["8"]);
+G2L["e"]["TextWrapped"] = true;
+G2L["e"]["ZIndex"] = 5;
+G2L["e"]["TextYAlignment"] = Enum.TextYAlignment.Top;
+G2L["e"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["e"]["TextXAlignment"] = Enum.TextXAlignment.Left;
+G2L["e"]["FontFace"] = Font.new([[rbxasset://fonts/families/Inconsolata.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["e"]["TextSize"] = 14;
+G2L["e"]["TextColor3"] = Color3.fromRGB(174, 242, 150);
+G2L["e"]["Size"] = UDim2.new(1.0018835067749023, 0, 1, 0);
+G2L["e"]["ClipsDescendants"] = true;
+G2L["e"]["Text"] = [[]];
+G2L["e"]["Name"] = [[Strings_]];
+G2L["e"]["BackgroundTransparency"] = 1;
+G2L["e"]["Position"] = UDim2.new(-0.00188360083848238, 0, 0.007284000050276518, 0);
+
+-- StarterGui.CapsoriPC.Main.ScriptBox.Tokens_
+G2L["f"] = Instance.new("TextLabel", G2L["8"]);
+G2L["f"]["TextWrapped"] = true;
+G2L["f"]["ZIndex"] = 5;
+G2L["f"]["TextYAlignment"] = Enum.TextYAlignment.Top;
+G2L["f"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["f"]["TextXAlignment"] = Enum.TextXAlignment.Left;
+G2L["f"]["FontFace"] = Font.new([[rbxasset://fonts/families/Inconsolata.json]], Enum.FontWeight.Regular, Enum.FontStyle.Normal);
+G2L["f"]["TextSize"] = 14;
+G2L["f"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["f"]["Size"] = UDim2.new(1.0000778436660767, 0, 0.9924603700637817, 0);
+G2L["f"]["ClipsDescendants"] = true;
+G2L["f"]["Text"] = [[]];
+G2L["f"]["Name"] = [[Tokens_]];
+G2L["f"]["BackgroundTransparency"] = 1;
+G2L["f"]["Position"] = UDim2.new(-0.00007807323709130287, 0, 0.007539648562669754, 0);
+
+-- StarterGui.CapsoriPC.Main.Execute
+G2L["10"] = Instance.new("TextButton", G2L["2"]);
+G2L["10"]["TextWrapped"] = true;
+G2L["10"]["BorderSizePixel"] = 2;
+G2L["10"]["BackgroundColor3"] = Color3.fromRGB(16, 16, 16);
+G2L["10"]["TextSize"] = 25;
+G2L["10"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
+G2L["10"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["10"]["Size"] = UDim2.new(0.4469854533672333, 0, 0.11214952915906906, 0);
+G2L["10"]["Name"] = [[Execute]];
+G2L["10"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["10"]["Text"] = [[Execute]];
+G2L["10"]["Position"] = UDim2.new(0.03534303605556488, 0, 0.8598130941390991, 0);
+
+-- StarterGui.CapsoriPC.Main.Execute.Execution
+G2L["11"] = Instance.new("LocalScript", G2L["10"]);
+G2L["11"]["Name"] = [[Execution]];
+
+-- StarterGui.CapsoriPC.Main.Clear
+G2L["12"] = Instance.new("TextButton", G2L["2"]);
+G2L["12"]["TextWrapped"] = true;
+G2L["12"]["BorderSizePixel"] = 2;
+G2L["12"]["BackgroundColor3"] = Color3.fromRGB(16, 16, 16);
+G2L["12"]["TextSize"] = 25;
+G2L["12"]["FontFace"] = Font.new([[rbxasset://fonts/families/SourceSansPro.json]], Enum.FontWeight.Bold, Enum.FontStyle.Normal);
+G2L["12"]["TextColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["12"]["Size"] = UDim2.new(0.4469854533672333, 0, 0.11214952915906906, 0);
+G2L["12"]["Name"] = [[Clear]];
+G2L["12"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["12"]["Text"] = [[Clear]];
+G2L["12"]["Position"] = UDim2.new(0.5197505354881287, 0, 0.8598130941390991, 0);
+
+-- StarterGui.CapsoriPC.Main.Clear.LocalScript
+G2L["13"] = Instance.new("LocalScript", G2L["12"]);
+
+
+-- StarterGui.CapsoriPC.Main.DragifyAndPrint
+G2L["14"] = Instance.new("LocalScript", G2L["2"]);
+G2L["14"]["Name"] = [[DragifyAndPrint]];
+
+-- StarterGui.CapsoriPC.Main.KeyScript
+G2L["15"] = Instance.new("LocalScript", G2L["2"]);
+G2L["15"]["Name"] = [[KeyScript]];
+
+-- StarterGui.CapsoriPC.ToggleCapsori
+G2L["16"] = Instance.new("ImageButton", G2L["1"]);
+G2L["16"]["BorderSizePixel"] = 0;
+G2L["16"]["BackgroundColor3"] = Color3.fromRGB(255, 255, 255);
+G2L["16"]["Image"] = [[http://www.roblox.com/asset/?id=17330829433]];
+G2L["16"]["Size"] = UDim2.new(0.06635008007287979, 0, 0.09558973461389542, 0);
+G2L["16"]["Name"] = [[ToggleCapsori]];
+G2L["16"]["BorderColor3"] = Color3.fromRGB(0, 0, 0);
+G2L["16"]["Position"] = UDim2.new(0.46542680263519287, 0, 0.03846153989434242, 0);
+
+-- StarterGui.CapsoriPC.ToggleCapsori.UICorner
+G2L["17"] = Instance.new("UICorner", G2L["16"]);
+G2L["17"]["CornerRadius"] = UDim.new(0, 30);
+
+-- StarterGui.CapsoriPC.ToggleCapsori.UIStroke
+G2L["18"] = Instance.new("UIStroke", G2L["16"]);
+G2L["18"]["Color"] = Color3.fromRGB(63, 170, 252);
+G2L["18"]["Thickness"] = 2;
+G2L["18"]["ApplyStrokeMode"] = Enum.ApplyStrokeMode.Border;
+
+-- StarterGui.CapsoriPC.ToggleCapsori.Dragify
+G2L["19"] = Instance.new("LocalScript", G2L["16"]);
+G2L["19"]["Name"] = [[Dragify]];
+
+-- StarterGui.CapsoriPC.ToggleCapsori.ToggleScript
+G2L["1a"] = Instance.new("LocalScript", G2L["16"]);
+G2L["1a"]["Name"] = [[ToggleScript]];
+
+-- StarterGui.CapsoriPC.Main.FPS.FPSFunction
+local function C_5()
+local script = G2L["5"];
+	local textLabel = script.Parent
+	
+	while wait() do
+		local fps = game.Workspace:GetRealPhysicsFPS()
+		textLabel.Text = "FPS: "..math.floor(fps)
+	end
+	
+end;
+task.spawn(C_5);
+-- StarterGui.CapsoriPC.Main.Close.LocalScript
+local function C_7()
+local script = G2L["7"];
+	script.Parent.MouseButton1Click:Connect(function()
+		script.Parent.Parent.Visible = false
+	end)
+end;
+task.spawn(C_7);
+-- StarterGui.CapsoriPC.Main.Execute.Execution
+local function C_11()
+local script = G2L["11"];
+	local Execute = script.Parent
+	local Box = script.Parent.Parent.ScriptBox
+	
+	Execute.MouseButton1Click:Connect(function()
+		local ScriptText = Box.Text
+		local Success, errorMsg = pcall(loadstring(ScriptText))
+		if not Success then
+			warn("Error executing script: " .. errorMsg)
+		end
+	end)
+end;
+task.spawn(C_11);
+-- StarterGui.CapsoriPC.Main.Clear.LocalScript
+local function C_13()
+local script = G2L["13"];
+	script.Parent.MouseButton1Click:Connect(function()
+		script.Parent.Parent.ScriptBox.Text = ""
+	end)
+end;
+task.spawn(C_13);
+-- StarterGui.CapsoriPC.Main.DragifyAndPrint
+local function C_14()
+local script = G2L["14"];
+	print("Capsori executor has loaded successfully")
+	
+	script.Parent.Active = true
+	script.Parent.Draggable = true
+	
+end;
+task.spawn(C_14);
+-- StarterGui.CapsoriPC.Main.KeyScript
+local function C_15()
+local script = G2L["15"];
+	local lua_keywords = {"and", "break", "do", "else", "elseif", "end", "false", "for", "function", "goto", "if", "in", "local", "nil", "not", "or", "repeat", "return", "then", "true", "until", "while", "/respawn", "/R6"}
+	local global_env = {"getrawmetatable", "game", "workspace", "script", "math", "string", "table", "print", "wait", "BrickColor", "Color3", "next", "pairs", "ipairs", "select", "unpack", "Instance", "Vector2", "Vector3", "CFrame", "Ray", "UDim2", "Enum", "assert", "error", "warn", "tick", "loadstring", "_G", "shared", "getfenv", "setfenv", "newproxy", "setmetatable", "getmetatable", "os", "debug", "pcall", "ypcall", "xpcall", "rawequal", "rawset", "rawget", "tonumber", "tostring", "type", "typeof", "_VERSION", "coroutine", "delay", "require", "spawn", "LoadLibrary", "settings", "stats", "time", "UserSettings", "version", "Axes", "ColorSequence", "Faces", "ColorSequenceKeypoint", "NumberRange", "NumberSequence", "NumberSequenceKeypoint", "gcinfo", "elapsedTime", "collectgarbage", "PhysicalProperties", "Rect", "Region3", "Region3int16", "UDim", "Vector2int16", "Vector3int16"}
+	
+	local Source = script.Parent.ScriptBox
+	
+	local Highlight = function(string, keywords)
+	    local K = {}
+	    local S = string
+	    local Token =
+	    {
+	        ["="] = true,
+	        ["."] = true,
+	        [","] = true,
+	        ["("] = true,
+	        [")"] = true,
+	        ["["] = true,
+	        ["]"] = true,
+	        ["{"] = true,
+	        ["}"] = true,
+	        [":"] = true,
+	        ["*"] = true,
+	        ["/"] = true,
+	        ["+"] = true,
+	        ["-"] = true,
+	        ["%"] = true,
+			[";"] = true,
+			["~"] = true
+	    }
+	    for i, v in pairs(keywords) do
+	        K[v] = true
+	    end
+	    S = S:gsub(".", function(c)
+	        if Token[c] ~= nil then
+	            return "\32"
+	        else
+	            return c
+	        end
+	    end)
+	    S = S:gsub("%S+", function(c)
+	        if K[c] ~= nil then
+	            return c
+	        else
+	            return (" "):rep(#c)
+	        end
+	    end)
+	  
+	    return S
+	end
+	
+	local hTokens = function(string)
+	    local Token =
+	    {
+	        ["="] = true,
+	        ["."] = true,
+	        [","] = true,
+	        ["("] = true,
+	        [")"] = true,
+	        ["["] = true,
+	        ["]"] = true,
+	        ["{"] = true,
+	        ["}"] = true,
+	        [":"] = true,
+	        ["*"] = true,
+	        ["/"] = true,
+	        ["+"] = true,
+	        ["-"] = true,
+	        ["%"] = true,
+			[";"] = true,
+			["~"] = true
+	    }
+	    local A = ""
+	    string:gsub(".", function(c)
+	        if Token[c] ~= nil then
+	            A = A .. c
+	        elseif c == "\n" then
+	            A = A .. "\n"
+			elseif c == "\t" then
+				A = A .. "\t"
+	        else
+	            A = A .. "\32"
+	        end
+	    end)
+	  
+	    return A
+	end
+	
+	
+	local strings = function(string)
+	    local highlight = ""
+	    local quote = false
+	    string:gsub(".", function(c)
+	        if quote == false and c == "\"" then
+	            quote = true
+	        elseif quote == true and c == "\"" then
+	            quote = false
+			end
+	        if quote == false and c == "\"" then
+	            highlight = highlight .. "\""
+	        elseif c == "\n" then
+	            highlight = highlight .. "\n"
+			elseif c == "\t" then
+			    highlight = highlight .. "\t"
+	        elseif quote == true then
+	            highlight = highlight .. c
+	        elseif quote == false then
+	            highlight = highlight .. "\32"
+	        end
+	    end)
+	  
+	    return highlight
+	end
+	
+	local comments = function(string)
+	    local ret = ""
+	    string:gsub("[^\r\n]+", function(c)
+	        local comm = false
+	        local i = 0
+	        c:gsub(".", function(n)
+	            i = i + 1
+	            if c:sub(i, i + 1) == "--" then
+	                comm = true
+	            end
+	            if comm == true then
+	                ret = ret .. n
+	            else
+	                ret = ret .. "\32"
+	            end
+	        end)
+	        ret = ret
+	    end)
+	    
+	    return ret
+	end
+	
+	local numbers = function(string)
+	    local A = ""
+	    string:gsub(".", function(c)
+	        if tonumber(c) ~= nil then
+	            A = A .. c
+	        elseif c == "\n" then
+	            A = A .. "\n"
+			elseif c == "\t" then
+				A = A .. "\t"
+	        else
+	            A = A .. "\32"
+	        end
+	    end)
+	  
+	    return A
+	end
+	
+	local highlight_source = function(type)
+		if type == "Text" then
+			Source.Text = Source.Text:gsub("\13", "")
+			Source.Text = Source.Text:gsub("\t", "      ")
+			local s = Source.Text
+			Source.Keywords_.Text = Highlight(s, lua_keywords)
+			Source.Globals_.Text = Highlight(s, global_env)
+			Source.RemoteHighlight_.Text = Highlight(s, {"FireServer", "fireServer", "InvokeServer", "invokeServer", "/respawn", "/R6"})
+			Source.Tokens_.Text = hTokens(s)
+			Source.Numbers_.Text = numbers(s)
+			Source.Strings_.Text = strings(s)
+			local lin = 1
+			s:gsub("\n", function()
+				lin = lin + 1
+			end)
+			end
+		end
+	
+	highlight_source("Text")
+	
+	Source.Changed:Connect(highlight_source)
+	
+	
+end;
+task.spawn(C_15);
+-- StarterGui.CapsoriPC.ToggleCapsori.Dragify
+local function C_19()
+local script = G2L["19"];
+	script.Parent.Active = true
+	script.Parent.Draggable = true
+end;
+task.spawn(C_19);
+-- StarterGui.CapsoriPC.ToggleCapsori.ToggleScript
+local function C_1a()
+local script = G2L["1a"];
+	script.Parent.MouseButton1Click:Connect(function()
+		script.Parent.Parent.Main.Visible = not script.Parent.Parent.Main.Visible
+	end)
+end;
+task.spawn(C_1a);
+
+return G2L["1"], require;
